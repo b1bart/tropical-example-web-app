@@ -19,6 +19,7 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/register": "^7.4.3",
+    "@types/elliptic": "^6.4.6",
     "base64url": "^2.0.0",
     "cbor": "^3.0.3",
     "eosjs": "^20.0.2-a53eecb.0",
