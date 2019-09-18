@@ -4413,6 +4413,15 @@ eosjs@20.0.0, eosjs@^20.0.0:
     eosjs-ecc "4.0.4"
     text-encoding "0.7.0"
 
+eosjs@^20.0.2-a53eecb.0:
+  version "20.0.2-d85dbee.0"
+  resolved "https://registry.yarnpkg.com/eosjs/-/eosjs-20.0.2-d85dbee.0.tgz#a6db4def0bcb6a45aaf98b0cc656e006bb283bd9"
+  integrity sha512-EVFZfwBuvszlKnNeococEIyIoOMPFmcm53NZX06x+DywUjtW3SdEsx9VjTVddua0DIqDmEkRSSesSJzKhWoUTg==
+  dependencies:
+    babel-runtime "6.26.0"
+    eosjs-ecc "4.0.4"
+    text-encoding "0.7.0"
+
 errno@^0.1.3, errno@~0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/errno/-/errno-0.1.7.tgz#4684d71779ad39af177e3f007996f7c67c852618"
