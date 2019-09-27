@@ -36,6 +36,9 @@
     "ual-scatter": "^0.1.3",
     "ual-token-pocket": "^0.1.1"
   },
+  "resolutions": {
+    "eosjs": "^20.0.2-a53eecb.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
