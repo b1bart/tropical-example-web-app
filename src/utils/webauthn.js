@@ -64,7 +64,10 @@ export const generateWebauthnPubkey = async ( accountName ) => {
       // Relying Party
       rp: {
         name: "Tropical Stay",
-        id: "localhost"
+        // Relying Party is being set to hostname for GitPod purposes.
+        // This is *not* how you'd do this in production.
+        // The allows the client and server to work with the URL GitPod starts the web server on.
+        id: window.location.hostname
       },
       // Cryptographic challenge from the server
       challenge: new Uint8Array(26),
@@ -91,7 +94,8 @@ export const generateWebauthnPubkey = async ( accountName ) => {
 export const enrollWebauthnPubkey = async (accountName, webauthnPublicKey) => {
   const payload = {
     accountName,
-    webauthnPublicKey
+    webauthnPublicKey,
+    serverHostname: window.location.hostname,
   }
 
   const enrollResponse = await fetch('/api/enroll', {
