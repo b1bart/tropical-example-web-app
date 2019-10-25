@@ -9,7 +9,7 @@ export default () => {
   const private_key_wif = process.env.API_SERVER_PRIVATE_KEY
   const api = Router()
 
-  const decodeWebauthnPublicKey = (webauthnPublicKey) => {
+  const decodeWebauthnPublicKey = (webauthnPublicKey, serverHostname) => {
     const attestationBuffer = base64url.toBuffer(webauthnPublicKey.attestationObject)
     const attestation = cbor.decodeFirstSync(attestationBuffer)
     const authdata = attestation.authData
@@ -25,7 +25,7 @@ export default () => {
     console.log(Buffer.from(x).toString('hex'))
     console.log(Buffer.from(y).toString('hex'))
 
-    const rpId = 'localhost'
+    const rpId = serverHostname
     const presence = ((flags)=>{
       if (flags & 0x04)
         return 2
@@ -79,8 +79,9 @@ export default () => {
     //
     const name = req.body.accountName
     const webauthnPublicKey = req.body.webauthnPublicKey
+    const serverHostname = req.body.serverHostname
 
-    users[name] = decodeWebauthnPublicKey(webauthnPublicKey)
+    users[name] = decodeWebauthnPublicKey(webauthnPublicKey, serverHostname )
     resp.json({ 'status': 'ok' })
   })
 
